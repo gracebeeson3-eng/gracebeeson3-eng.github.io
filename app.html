@@ -5,26 +5,63 @@
     <title>Hiking Prep Simulator</title>
     <style>
         body { font-family: sans-serif; text-align: center; padding: 50px; background: #fffde7; }
-        #game-box { border: 2px solid #fbc02d; padding: 30px; display: inline-block; border-radius: 15px; background: white; }
-        button { background: #fbc02d; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold; }
+        #game-box { border: 2px solid #fbc02d; padding: 30px; display: inline-block; border-radius: 15px; background: white; width: 400px; }
+        button { background: #fbc02d; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold; border-radius: 5px; }
+        button:hover { background: #f9a825; }
+        
+        /* New Styles for the Checklist */
+        #gear-list { text-align: left; margin-top: 20px; padding: 0; list-style: none; }
+        .gear-item { 
+            padding: 10px; 
+            border-bottom: 1px solid #eee; 
+            cursor: pointer; 
+            transition: 0.3s;
+        }
+        .gear-item:hover { background-color: #fff9c4; }
+        .packed { text-decoration: line-through; color: #888; background-color: #e8f5e9 !important; }
     </style>
 </head>
 <body>
     <div id="game-box">
-        <h1>Water Intake Calculator</h1>
+        <h1>Hiking Prep Tool</h1>
+        
         <p>How many miles are you hiking?</p>
-        <input type="number" id="miles" placeholder="Enter miles">
+        <input type="number" id="miles" placeholder="Enter miles" style="padding: 8px;">
         <button onclick="calculate()">Calculate Liters</button>
-        <h2 id="result"></h2>
+        <h2 id="result" style="font-size: 1.2em; color: #f57f17;"></h2>
+
+        <hr style="margin: 30px 0; border: 0; border-top: 1px dashed #fbc02d;">
+
+        <h3>Essential Gear Checklist</h3>
+        <p><small>(Click an item to pack it)</small></p>
+        <ul id="gear-list">
+            <li class="gear-item" onclick="togglePack(this)">Sunscreen & Hat</li>
+            <li class="gear-item" onclick="togglePack(this)">First Aid Kit</li>
+            <li class="gear-item" onclick="togglePack(this)">Trail Map/GPS</li>
+            <li class="gear-item" onclick="togglePack(this)">Protein Snacks</li>
+            <li class="gear-item" onclick="togglePack(this)">Emergency Whistle</li>
+        </ul>
+
         <br>
-        <a href="hiking.html">Return to Hiking Page</a>
+        <a href="hiking.html" style="color: #f57f17; text-decoration: none; font-weight: bold;">← Return to Hiking Page</a>
     </div>
 
     <script>
+        // Your original calculation function
         function calculate() {
             const miles = document.getElementById('miles').value;
-            const liters = (miles * 0.5).toFixed(1);
-            document.getElementById('result').innerText = "You should pack at least " + liters + " liters of water!";
+            if (miles > 0) {
+                const liters = (miles * 0.5).toFixed(1);
+                document.getElementById('result').innerText = "Pack at least " + liters + "L of water!";
+            } else {
+                document.getElementById('result').innerText = "Enter a valid distance!";
+            }
+        }
+
+        // New function to handle the interactive list
+        function togglePack(element) {
+            // This 'toggles' the CSS class "packed" on and off when clicked
+            element.classList.toggle("packed");
         }
     </script>
 </body>
