@@ -1,9 +1,10 @@
 /* 1. Body definition (Includes Font Color and Custom Background) */
 body {
-    background-color: #f1f8e9; /* Custom Background Color */
+    background-color: #a5d6a7; /* More saturated, obvious green */
     font-family: "Trebuchet MS", sans-serif;
-    color: #333333; /* Font Color Specification */
+    color: #333333;
     margin: 0;
+
 }
 
 /* 2. Wrapper definition (Positioning) */
