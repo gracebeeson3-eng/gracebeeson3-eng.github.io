@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiking Prep Simulator</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 50px; background: #fffde7; }
+        #game-box { border: 2px solid #fbc02d; padding: 30px; display: inline-block; border-radius: 15px; background: white; }
+        button { background: #fbc02d; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div id="game-box">
+        <h1>Water Intake Calculator</h1>
+        <p>How many miles are you hiking?</p>
+        <input type="number" id="miles" placeholder="Enter miles">
+        <button onclick="calculate()">Calculate Liters</button>
+        <h2 id="result"></h2>
+        <br>
+        <a href="hiking.html">Return to Hiking Page</a>
+    </div>
+
+    <script>
+        function calculate() {
+            const miles = document.getElementById('miles').value;
+            const liters = (miles * 0.5).toFixed(1);
+            document.getElementById('result').innerText = "You should pack at least " + liters + " liters of water!";
+        }
+    </script>
+</body>
+</html>
