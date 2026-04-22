@@ -1,43 +1,40 @@
-/* Custom Stylesheet - No Bootstrap allowed here */
-
+/* 1. Body definition (Includes Font Color and Custom Background) */
 body {
-    background-color: #eef2f3; /* Custom background */
-    font-family: "Trebuchet MS", sans-serif; /* Specified font family */
-    color: #333333; /* Specified font color */
+    background-color: #f1f8e9; /* Custom Background Color */
+    font-family: "Trebuchet MS", sans-serif;
+    color: #333333; /* Font Color Specification */
     margin: 0;
 }
 
-#wrapper { /* Div 1 for positioning */
+/* 2. Wrapper definition (Positioning) */
+#wrapper {
     width: 85%;
     margin: 20px auto;
     padding: 20px;
     background-color: white;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
 }
 
-#header-box { /* Div 2 for styling block */
+/* 3. Header-box definition (Styling block & Font Color) */
+#header-box {
     background-color: #2e7d32;
-    color: #ffffff;
+    color: #ffffff; /* Font Color Specification */
     padding: 15px;
     text-align: center;
 }
 
-#content-main { /* Div 3 for styling block */
+/* 4. Content-main definition (Styling block) */
+#content-main {
     padding: 20px;
     line-height: 1.6;
 }
 
-/* Forces Tableau to fill the width of your content-main/wrapper */
+/* 5. & 6. Tableau definitions (Sizing fixes) */
 .tableauPlaceholder {
     width: 100% !important;
-    margin: 20px 0;
 }
 
 .tableauViz {
     width: 100% !important;
-    min-height: 600px; /* Adjust this number to make it taller or shorter */
-}
-
-nav {
-    padding-bottom: 15px;
-    border-bottom: 1px solid #ccc;
+    min-height: 600px;
 }
