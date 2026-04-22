@@ -1,0 +1,32 @@
+/* Custom Stylesheet - No Bootstrap allowed here */
+
+body {
+    background-color: #eef2f3; /* Custom background */
+    font-family: "Trebuchet MS", sans-serif; /* Specified font family */
+    color: #333333; /* Specified font color */
+    margin: 0;
+}
+
+#wrapper { /* Div 1 for positioning */
+    width: 85%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+}
+
+#header-box { /* Div 2 for styling block */
+    background-color: #2e7d32;
+    color: #ffffff;
+    padding: 15px;
+    text-align: center;
+}
+
+#content-main { /* Div 3 for styling block */
+    padding: 20px;
+    line-height: 1.6;
+}
+
+nav {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+}
